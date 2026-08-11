@@ -20,3 +20,5 @@ m = int(input("Enter a Number: "))
 n = int(input("Enter another Number: "))
 
 print(f"Greatest Common Divisor of {m} and {n} is {gcd(m,n)}")
+
+# This is program to find gcd of m and n
