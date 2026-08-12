@@ -1,0 +1,8 @@
+Output 1 = 10
+
+Output 2 = 2
+
+Answer 3 = n is perfect square
+
+Answer 4 = The fucntion terminates for nonnegative n with foo(n) = n(n+1)/2
+
