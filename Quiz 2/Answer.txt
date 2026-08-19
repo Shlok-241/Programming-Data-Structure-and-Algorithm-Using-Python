@@ -1,0 +1,68 @@
+Answer 1 :-
+
+Statement 7 (w[1][:3] = 'fea') generates a TypeError because Python strings are immutable.
+Statement 7: w[1][:3] = 'fea' attempts to slice into w[1] and assign new characters ('fea') to part of a string.
+In Python, while you can retrieve slice values from a string, you cannot modify elements of a string in-place via slice assignment.
+Doing so raises:
+    TypeError: 'str' object does not support item assignment
+
+Answer 2 :-
+
+The correct choice is a[0] == 65, b[3] == 73, c[3] == 73, d[1] == 95 (the 3rd option).
+Here is a step-by-step breakdown of how each list changes in memory:
+
+b = [43, 99, 65, 105, 4]: Creates list b.
+
+a = b[2:]: Slicing creates a new, independent copy of elements from index 2 onwards ([65, 105, 4]). Modifying b later will not affect a.
+
+d = b[1:]: Slicing creates another new copy ([99, 65, 105, 4]).
+
+c = b: Creates an alias—c points to the exact same list as b.
+
+d[1] = 95: Changes the value at index 1 of list d to 95 (d becomes [99, 95, 105, 4]).
+
+b[2] = 47: Changes index 2 of b to 47. Since c references b, c[2] also becomes 47.
+
+c[3] = 73: Changes index 3 of c to 73. Since b is the same list, b[3] also becomes 73.
+
+Evaluating the final values:
+
+a[0]: 65 (unaffected by changes to b)
+
+b[3]: 73
+
+c[3]: 73
+
+d[1]: 95
+
+
+Answer 3 :-
+
+The value of endmsg after execution is 'adnocana' (or "adnocana").
+
+startmsg has a length of 8 (len("anaconda") == 8).
+
+range(1, 1 + 8) generates numbers from 1 to 8.
+
+startmsg[-1] gives 'a' (the last character)
+
+startmsg[-2] gives 'd'
+
+startmsg[-3] gives 'n'
+
+...and so on, down to startmsg[-8], which gives 'a' (the first character).
+
+
+Answer 4 :-
+
+The value of mylist remains [7, 11, 13, 17, 19, 21].
+
+Here is why mylist is not modified:
+
+Scope and Reassignment: Inside mystery(l), the statement l = l[2:] creates a new list object via slicing ([13, 17, 19, 21]) and rebinds the local variable l to point to this new list.
+
+No In-Place Mutation: Slicing does not mutate or modify the original list in place—it only updates the local reference l inside the function scope.
+
+Unused Return Value: Although mystery(l) returns the sliced list, the caller line mystery(mylist) does not store or assign that returned result to anything.
+
+Since the original list mylist was never modified in place, its contents remain unchanged.
